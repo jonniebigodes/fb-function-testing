@@ -1,0 +1,5 @@
+node_modules/
+
+firebasesettings.json
+
+utils/config.js
