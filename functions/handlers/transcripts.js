@@ -1,6 +1,8 @@
 const { db } = require("../utils/admin");
 exports.getAllTranscripts = async (req, res) => {
   try {
+    console.log('transcripts were hit');
+    
     const allTranscripts = await db
       .collection("transcripts")
       .orderBy("createdAt", "desc")
@@ -20,6 +22,7 @@ exports.getAllTranscripts = async (req, res) => {
   }
 };
 exports.addTranscripts = async (req, res) => {
+  console.log('addTranscripts were hit');
   try {
     if (Object.keys(req.body).length === 0) {
       return res.status(400).json({ error: "no transcripts were provided" });

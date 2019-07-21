@@ -1,8 +1,10 @@
 const functions = require('firebase-functions');
 const express= require('express');
+const cors= require('cors');
 const {getAllTranscripts,addTranscripts}= require('./handlers/transcripts');
 const app = express()
 
+app.use(cors())
 app.get('/transcripts',getAllTranscripts)
 app.post('/transcript',addTranscripts)
 
